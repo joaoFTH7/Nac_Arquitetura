@@ -1,0 +1,10 @@
+- hosts: webservers
+  become: yes
+  tasks:
+    - name: Instalando pacotes dependentes
+      apt:
+        pkg:
+        - curl
+        - openssh-server
+        - ca-certificates
+        - tzdata
