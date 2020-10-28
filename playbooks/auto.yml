@@ -8,3 +8,12 @@
         - openssh-server
         - ca-certificates
         - tzdata
+    - name: Adicionar o repositório do pacote do GitLab
+      shell: curl https://packages.gitlab.com/install/repositories/gitlab/gitlab-ee/script.deb.sh | sudo bash
+    - name: Adicionando URL de acesso
+      shell: EXTERNAL_URL="rm83188.webserver.fiaplabs.com"
+    - name: Instalando o GitLab
+      apt:
+        pkg:
+        - gitlab-ee
+
